@@ -1,32 +1,44 @@
+@mixin card-styles {
+    border-radius: 10px;
+    box-shadow: 1px 2px 1px 1px;
+    background: rgba(6, 168, 206, 0.35);
+    border: 1px solid black;
+    margin: 20px;
+}
+
 .loginScreen {
     display: flex;
-    margin: 80px 20px 0px 20px;
+    padding: 40px 20px 0px 20px;
     gap: 2%;
 
     .ls-banner {
-        margin: 20px;
+        @include card-styles;
         width: 70%;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid black;
+
+        > img {
+            width: 100%;
+            border-radius: 10px;
+        }
     }
 
     .ls-container {
-        margin: 20px;
+        @include card-styles;
         padding: 10px;
         width: 30%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border: 1px solid black;
 
         .ls-c-header {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            margin-top: 20px;
 
             .ls-c-h-title {
                 color: #000;
@@ -51,34 +63,43 @@
         .ls-c-formulario {
             margin: 20px;
             width: 60%;
+            gap: 10px;
             display: flex;
             justify-content: left;
             align-items: start;
             flex-direction: column;
 
             .ls-c-f-usuario {
+                width: 100%;
 
-                .ls-c-f-u-label {
-                    
-                }
+                .ls-c-f-u-label {}
 
                 .ls-c-f-u-input {
-
+                    >input {
+                        width: -webkit-fill-available;
+                    }
                 }
             }
 
             .ls-c-f-pass {
+                width: 100%;
 
-                .ls-c-f-p-label {
-
-                }
+                .ls-c-f-p-label {}
 
                 .ls-c-f-p-input {
-
+                    >input {
+                        width: -webkit-fill-available;
+                    }
                 }
             }
 
-            .ls-c-f-botonLogin {}
+            .ls-c-f-botonLogin {
+                margin-top: 10px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
 
         .ls-c-loginRedes {
@@ -86,8 +107,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
-            gap: 25%;
+            gap: 25px;
+            padding: 10px;
 
             .ls-c-lr-facebook {
                 width: 25px;
@@ -112,6 +133,11 @@
             }
         }
 
-        .ls-c-registrarse {}
+        .ls-c-registrarse {
+            margin: 10px;
+            padding: 10px;
+            width: 60%;
+            text-align: center;
+        }
     }
 }
